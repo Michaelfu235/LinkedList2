@@ -14,16 +14,18 @@ int main(){
   Node* head = NULL;
   Node* current = head;
   bool justKeepGoing = true;
-  char inpt[20];
+  char input[20];
 
 
   
   while(justKeepGoing == true){
+    cout << "-------------------------------------------------------------------------" << endl;
+    
     cout << "ADD, PRINT, DELETE, AVERAGE, or QUIT" << endl;
     cin.get(input, 10);
     cin.get();
 
-    if(strcpy(input, "ADD")==0){
+    if(strcmp(input, "ADD")==0){
       char* name1 = new char[20];
       char* name2 = new char[20];
       int ID;
@@ -35,17 +37,38 @@ int main(){
 
       cout << "last name?" << endl;
       cin.get(name2, 20);
-      cin.get();
-
+      
       cout << "ID?" << endl;
       cin >> ID;
-
+      cin.clear();
+      
       cout << "GPA?" << endl;
       cin >> GPA;
-
+      cin.clear();
       
-	
+      
+      Student* newStu = new Student(name1, name2, ID, GPA);
+      ADD(head, newStu, head);
+      cin.ignore();
+    } else if(strcmp(input, "PRINT")==0){
+      PRINT(head, head);
+    } else if(strcmp(input, "DELETE")==0){
+      int idtodel = 0;
+      cout << "what is the ID of the student you want to delete?" << endl;
+      cin >> idtodel;
+      cin.clear();
+      cin.ignore();
+      
+      DELET(head, idtodel, head);
+    } else if(strcmp(input, "AVERAGE")==0){
+      cout << "Average: " << AVERAGE(head, 0.00, 0) << endl;
+      cout << endl;
+    } else if(strcmp(input, "QUIT")==0){
+      justKeepGoing = false;
+    } else{
+      cout << "not a valid command" << endl;
     }
+    
   }
   /*
   char* name1 = new char[20];
