@@ -3,7 +3,7 @@
 #include <iostream>
 
 using namespace std;
-
+//constructor
 Student::Student(char* firstname, char* lastname, int id, float gpa){
   fName = new char[20];
   strcpy(fName, firstname);
@@ -14,6 +14,7 @@ Student::Student(char* firstname, char* lastname, int id, float gpa){
   GPA = gpa;
 }
 
+// functions to return the first name, last name, ID and GPA
 char* Student::getFirstName(){
   return fName;
 }
@@ -30,6 +31,7 @@ float Student::getGPA(){
   return GPA;
 }
 
+//print all the student information
 void Student::printStudent(){
   cout.setf(ios::fixed, ios::floatfield);
   cout.setf(ios::showpoint);

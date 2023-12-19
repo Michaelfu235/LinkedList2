@@ -1,4 +1,4 @@
-//Nick Braun
+//using the code of: Nick Braun
 //12/5/2023
 //Linked List Part 1
 #ifndef NODE_H
