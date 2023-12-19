@@ -1,7 +1,7 @@
 
 #include <iostream>
-#include "Node.h"
-#include "Student.h"
+#include "node.h"
+#include "student.h"
 
 using namespace std;
 
@@ -201,7 +201,7 @@ float AVERAGE(Node* current, float aver, int temp){
 void DELET(Node* current, int id, Node* &head){
   if(head == NULL){
     cout << "database empty" << endl;
-  } else if(current->getStudent()->getID() == head->getStudent()->getID() && current->getStudent()->getID() == id){
+  } else if(current->getStudent()->getID() == head->getStudent()->getID() &&current->getStudent()->getID() == id){
     Node* temp2 = head->getNext();
     head = temp2;
   } else if (current->getNext() == NULL){
@@ -217,31 +217,3 @@ void DELET(Node* current, int id, Node* &head){
   }
 }
 
-/*
-void DELET(Node* current, int id, Node* &head){
-  if(current == NULL){
-    cout << "end of database" << endl;
-  } else if(head->getStudent()->getID() == id && head->getNext() != NULL){
-    cout << "bd" << endl;
-    Node* temp = head->getNext();
-    delete head;
-    head = temp;
-  } else if(head->getStudent()->getID() == id && head->getNext()==NULL){
-    cout << "ab" << endl;
-    delete head;
-    head = NULL;
-  } else if(current->getStudent()->getID() == id){
-    cout << "gb" << endl;
-    delete current;
-    head = NULL;
-    
-  } else if(current->getNext() == NULL){
-    cout << "Student with given ID not found" << endl;
-  } else {
-    cout << "bad" << endl;
-    current->getNext()->getStudent()->printStudent();
-    DELET(current->getNext(), id, head);
-    return;
-  }
-}
-*/
