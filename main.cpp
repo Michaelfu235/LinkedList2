@@ -185,6 +185,9 @@ void PRINT(Node* current, Node* &head){
 
 
 float AVERAGE(Node* current, float aver, int temp){
+  cout.setf(ios::fixed, ios::floatfield);
+  cout.setf(ios::showpoint);
+  cout.precision(2);
   if(current == NULL){
     return 0.00;
   } else if(current->getNext() != NULL){

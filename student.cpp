@@ -31,9 +31,12 @@ float Student::getGPA(){
 }
 
 void Student::printStudent(){
+  cout.setf(ios::fixed, ios::floatfield);
+  cout.setf(ios::showpoint);
+  cout.precision(2);
   cout << "First name: " << fName << endl;
   cout << "Last name: " << lName << endl;
   cout << "ID: " << ID << endl;
-  cout << "GPA: "  << GPA << endl;
+  cout << "GPA: " << GPA << endl;
   cout << endl;
 }
