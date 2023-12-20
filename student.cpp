@@ -1,3 +1,7 @@
+//Author: Michael Fu
+//Date: 12/19
+//this is the cpp file for the student class. 
+
 #include "student.h"
 #include "node.h"
 #include <iostream>
